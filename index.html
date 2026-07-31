@@ -197,6 +197,22 @@
     color: var(--teal);
   }
 
+  .privacy-note {
+    margin-top: 14px;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #6E6A6B;
+  }
+
+  .privacy-note a {
+    color: #9A9A9A;
+    text-decoration: underline;
+  }
+
+  .privacy-note a:hover {
+    color: var(--teal);
+  }
+
   .ig-link {
     margin-top: 32px;
     display: inline-flex;
@@ -233,6 +249,14 @@
     color: #6E6A6B;
   }
 
+  footer a {
+    color: #6E6A6B;
+  }
+
+  footer a:hover {
+    color: var(--teal);
+  }
+
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
@@ -264,6 +288,7 @@
         <button type="submit" id="signupBtn">Notify me</button>
       </div>
       <p class="signup-note" id="signupNote"></p>
+      <p class="privacy-note">By signing up, you agree to receive updates from RUCK Coffee. See our <a href="/privacy.html">Privacy Policy</a>.</p>
     </form>
 
     <a class="ig-link" href="https://instagram.com/theruckcoffee" target="_blank" rel="noopener">
@@ -276,7 +301,7 @@
     </a>
   </div>
 
-  <footer>© 2026 RUCK COFFEE</footer>
+  <footer>© 2026 RUCK COFFEE · <a href="/privacy.html">Privacy Policy</a></footer>
 
   <script>
     (function () {
