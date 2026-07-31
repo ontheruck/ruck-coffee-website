@@ -41,13 +41,19 @@
 
   .mountains {
     position: fixed;
-    bottom: -5%;
-    right: -8%;
-    width: min(70vw, 620px);
+    left: 0;
+    bottom: 0;
+    width: 100%;
     opacity: 0.16;
     pointer-events: none;
     user-select: none;
     z-index: 0;
+  }
+
+  .mountains img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .content {
@@ -227,7 +233,7 @@
 </head>
 <body>
 
-  <img class="mountains" src="mountains.png" alt="" />
+  <div class="mountains"><img src="mountains-horizontal.png" alt="" /></div>
 
   <div class="content">
     <div class="eyebrow">THE RUCK COFFEE</div>
