@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUCK Coffee — Coming Soon</title>
+<meta name="description" content="RUCK Coffee — the companion for the daily grind. Launching soon in Germany.">
+<meta property="og:title" content="RUCK Coffee — Coming Soon">
+<meta property="og:description" content="For the journey. Launching soon.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#231F20">
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --black: #231F20;
+    --teal: #ACE0E8;
+    --white: #FFFFFF;
+    --gray: #9A9A9A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow-x: hidden;
+    padding: 24px;
+  }
+
+  .mountains {
+    position: fixed;
+    bottom: -5%;
+    right: -8%;
+    width: min(70vw, 620px);
+    opacity: 0.16;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 620px;
+    animation: fadeIn 1.1s ease-out;
+  }
+
+  .eyebrow {
+    font-size: clamp(11px, 2vw, 13px);
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: var(--teal);
+    margin-bottom: 28px;
+  }
+
+  .wordmark {
+    font-size: clamp(56px, 14vw, 120px);
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--teal);
+    line-height: 1;
+  }
+
+  .subword {
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: bold;
+    letter-spacing: 8px;
+    color: var(--white);
+    margin-top: 10px;
+  }
+
+  .tagline {
+    font-size: clamp(15px, 2.4vw, 19px);
+    font-style: italic;
+    color: var(--teal);
+    margin-top: 26px;
+  }
+
+  .blurb {
+    font-size: clamp(13px, 2vw, 15px);
+    color: var(--gray);
+    margin-top: 14px;
+    line-height: 1.5;
+    max-width: 440px;
+  }
+
+  .signup {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .signup-label {
+    display: block;
+    font-size: clamp(11px, 2vw, 12px);
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+
+  .signup-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .signup-row input[type="email"] {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 16px;
+    border-radius: 999px;
+    border: 1.5px solid #4A4546;
+    background: #2C2829;
+    color: var(--white);
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .signup-row input[type="email"]::placeholder {
+    color: #7A7576;
+  }
+
+  .signup-row input[type="email"]:focus {
+    border-color: var(--teal);
+  }
+
+  .signup-row button {
+    flex-shrink: 0;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1.5px solid var(--teal);
+    background: var(--teal);
+    color: var(--black);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .signup-row button:hover {
+    background: transparent;
+    color: var(--teal);
+  }
+
+  .signup-row button:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  .signup-note {
+    margin-top: 12px;
+    font-size: 12.5px;
+    color: var(--gray);
+    min-height: 16px;
+  }
+
+  .signup-note.success {
+    color: var(--teal);
+  }
+
+  .ig-link {
+    margin-top: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 26px;
+    border: 1.5px solid var(--teal);
+    border-radius: 999px;
+    color: var(--teal);
+    text-decoration: none;
+    font-size: clamp(13px, 2vw, 15px);
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .ig-link:hover {
+    background: var(--teal);
+    color: var(--black);
+  }
+
+  .ig-link svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 60px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #6E6A6B;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 420px) {
+    .signup-row {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <img class="mountains" src="mountains.png" alt="" />
+
+  <div class="content">
+    <div class="eyebrow">THE RUCK COFFEE</div>
+    <div class="wordmark">RUCK</div>
+    <div class="subword">C O F F E E</div>
+    <div class="tagline">For the journey.</div>
+    <p class="blurb">The companion for the daily grind — training, working, or just navigating life. Something's brewing. Launching soon in Germany.</p>
+
+    <form class="signup" id="signupForm">
+      <label class="signup-label" for="email">STAY IN THE LOOP</label>
+      <div class="signup-row">
+        <input type="email" id="email" name="email" placeholder="you@email.com" required autocomplete="email">
+        <button type="submit" id="signupBtn">Notify me</button>
+      </div>
+      <p class="signup-note" id="signupNote"></p>
+    </form>
+
+    <a class="ig-link" href="https://instagram.com/theruckcoffee" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="12" cy="12" r="4.4" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/>
+      </svg>
+      @theruckcoffee
+    </a>
+  </div>
+
+  <footer>© 2026 RUCK COFFEE</footer>
+
+  <script>
+    (function () {
+      var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwwsn-JEYPRY7bB6JWSAJw0Cz4qa25qI_QzqqAuX9EpKT5SzJhuV1nteV2VUmdUPiNbAg/exec';
+      var form = document.getElementById('signupForm');
+      var note = document.getElementById('signupNote');
+      var btn = document.getElementById('signupBtn');
+      var emailInput = document.getElementById('email');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = emailInput.value.trim();
+        if (!email) return;
+
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        note.textContent = '';
+        note.classList.remove('success');
+
+        var data = new FormData();
+        data.append('email', email);
+
+        fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
+          .then(function () {
+            note.textContent = "You're on the list. Thanks!";
+            note.classList.add('success');
+            form.reset();
+          })
+          .catch(function () {
+            note.textContent = 'Something went wrong — please try again.';
+          })
+          .finally(function () {
+            btn.disabled = false;
+            btn.textContent = 'Notify me';
+          });
+      });
+    })();
+  </script>
+
+</body>
+</html>
