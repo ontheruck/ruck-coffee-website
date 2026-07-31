@@ -9,7 +9,7 @@
 <meta property="og:description" content="For the journey. Launching soon.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#231F20">
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/png" href="ruck-symbol.png">
 <style>
   :root {
     --black: #231F20;
@@ -66,12 +66,18 @@
     animation: fadeIn 1.1s ease-out;
   }
 
-  .eyebrow {
-    font-size: clamp(11px, 2vw, 13px);
-    font-weight: bold;
-    letter-spacing: 4px;
-    color: var(--teal);
+  .brand-mark {
+    width: clamp(80px, 16vw, 128px);
+    height: auto;
     margin-bottom: 28px;
+  }
+
+  .pretitle {
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: bold;
+    letter-spacing: 8px;
+    color: var(--white);
+    margin-bottom: 10px;
   }
 
   .wordmark {
@@ -236,7 +242,8 @@
   <div class="mountains"><img src="mountains-horizontal.png" alt="" /></div>
 
   <div class="content">
-    <div class="eyebrow">THE RUCK COFFEE</div>
+    <img class="brand-mark" src="ruck-symbol.png" alt="RUCK Coffee">
+    <div class="pretitle">T H E</div>
     <div class="wordmark">RUCK</div>
     <div class="subword">C O F F E E</div>
     <div class="tagline">For the journey.</div>
